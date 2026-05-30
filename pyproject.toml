@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "image-inpainting"
+version = "1.0.0"
+description = "Restoring damaged image areas with a CNN encoder-decoder (autoencoder)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Dineth Shakya" }]
+keywords = ["deep-learning", "image-inpainting", "computer-vision", "autoencoder", "tensorflow"]
+dependencies = [
+    "tensorflow>=2.12,<2.16",
+    "numpy>=1.23",
+    "pillow>=9.0",
+    "matplotlib>=3.6",
+    "scikit-learn>=1.1",
+]
+
+[project.scripts]
+inpaint-train = "inpainting.train:main"
+inpaint-predict = "inpainting.predict:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
