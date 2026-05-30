@@ -1,5 +1,7 @@
 # Core dependencies for training and inference
-tensorflow>=2.12,<2.16
+# The bundled model (models/inpainting_model.h5) was saved with Keras 3,
+# so it requires TensorFlow 2.16+ (which ships Keras 3) to load.
+tensorflow>=2.16
 numpy>=1.23
 pillow>=9.0
 matplotlib>=3.6
